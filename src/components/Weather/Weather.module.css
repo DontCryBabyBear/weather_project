@@ -1,0 +1,14 @@
+.content{
+    padding: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2%;
+}
+
+.infos{
+    box-shadow: 1px 1px 6px #8dece8;
+}
+
+.content section{
+    box-shadow: 1px 1px 6px #8dece8;
+}
