@@ -5,8 +5,8 @@ function Weather({weather, city}) {
         <div className={classes.content}>
 
             <section>
+                <div></div>
                 {city}
-                <p>{weather.weather[0].description}</p>
             </section>
 
             <div className={classes.infos}>

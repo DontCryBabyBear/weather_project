@@ -16,7 +16,7 @@ function useGeo(city) {
         latitude: json.features[0].center[1],
         longitude: json.features[0].center[0],
         city : json.features[0].place_name
-    })).catch((e)=>console.log('KEP KEP'))
+    })).catch((e)=>setGeo('Place not found, check and try again!'))
   }, [city]);
 
   if(geo)

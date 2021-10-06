@@ -1,17 +1,23 @@
-import {useState} from 'react'
+import { useState } from "react";
 import useWeather from "./hooks/useWeather";
 import Weather from "./components/Weather/Weather";
+import "./App.css";
+import Search from "./components/search/Search";
+
 function App() {
-  const [search , setSearch] = useState('belo horizonte');
-  const weather = useWeather(search)
- console.log('weather',weather)
- const onSearch = ({target})=>{
-   setSearch(target.value)
- }
+  const [search, setSearch] = useState("belo horizonte");
+  const weather = useWeather(search);
+  console.log(weather);
+
+  if (weather === undefined) {
+    return <p>Loading...</p>;
+  } else if (weather.error) {
+    return <p>{weather.msg}</p>;
+  }
   return (
-    <div >
-      <input type='text' value={search} onChange={onSearch}/>
-      {weather && <Weather weather={weather.json} city={weather.city} /> } 
+    <div className="content">
+      <Search setSearch={setSearch} />
+      {weather && <Weather weather={weather.json} city={weather.city} />}
     </div>
   );
 }
