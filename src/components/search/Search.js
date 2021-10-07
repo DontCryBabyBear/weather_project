@@ -5,7 +5,7 @@ function Search({ setSearch }) {
   const ref = useRef();
   const onSearch = () => {
     setTimeout(() => {
-      setSearch(ref.current.value);
+      if (ref.current.value) setSearch(ref.current.value);
     }, 2000);
   };
   return (

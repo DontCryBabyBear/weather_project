@@ -1,0 +1,20 @@
+.content{
+    justify-self: flex-end;
+    border-top: 1px solid black;
+    margin: 0 5%;
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: .6%;
+}
+
+.apis{
+    display: flex;
+}
+
+.apis p{
+    margin: 1%;
+    text-align: center;
+    padding: 8px;
+}

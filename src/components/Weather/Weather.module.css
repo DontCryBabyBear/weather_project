@@ -1,6 +1,7 @@
 .content{
     padding: 2%;
     display: flex;
+    margin-bottom: 5%;
     
 }
 
@@ -9,10 +10,12 @@
     flex-grow: 1;
     height: 20vh;
     margin-left: 1%;
+    padding: .6%;
 }
 
 .content section{
     box-shadow: 1px 1px 6px #a8a8a8;
     flex-grow: 1;
     height: 50vh;
+    padding: .6%;
 }
