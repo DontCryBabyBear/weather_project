@@ -4,12 +4,11 @@
 }
 
 .content input{
-    padding: 1%;
-    border: 1px solid #a8a8a8;
+    border: none
 }
 
 .searchBtn{
-    padding: 8px;
+    padding: 4px;
     width: 2%;
     height: 2%;
 }
