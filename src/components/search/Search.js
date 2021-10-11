@@ -6,7 +6,7 @@ function Search({ setSearch }) {
   const onSearch = () => {
     setTimeout(() => {
       if (ref.current.value) setSearch(ref.current.value);
-    }, 2000);
+    }, 1000);
   };
   return (
     <div className={classes.content}>

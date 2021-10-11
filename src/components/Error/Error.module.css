@@ -3,4 +3,8 @@
     margin: 1%;
     text-align: center;
     padding-top: 1%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
 }

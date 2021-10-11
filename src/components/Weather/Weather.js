@@ -1,22 +1,42 @@
-import React from 'react'
-import classes from './Weather.module.css'
-function Weather({weather, city}) {
-    return (
-        <div className={classes.content}>
+import { useState, useEffect } from "react";
+import classes from "./Weather.module.css";
+import imgs from "../../img/img";
+function Weather({ weather, city }) {
+    const [weatherBg, setWeatherBg] = useState({url : '', hex : '', bgSize : ''});
+    useEffect(()=>{
+        if(weather.main.temp <=6 ){
+            setWeatherBg(imgs.coldest)
+        }else
+        if(weather.main.temp <= 15){
+            setWeatherBg(imgs.cold)
+        }else
+        if(weather.main.temp <= 30){
+            setWeatherBg(imgs.heat)
+        }else
+        if(weather.main.temp >30){
+            setWeatherBg(imgs.hot)
+        }
+    },[weather])
+  return (
+    <div className={classes.content}>
+      <section
+        style={{
+          backgroundImage: `url(${weatherBg.url})`,
+          backgroundColor: weatherBg.hex,
+          backgroundSize: weatherBg.bgSize,
+        }}
+      >
+        {city}
+      </section>
 
-            <section>
-                <div></div>
-                {city}
-            </section>
-
-            <div className={classes.infos}>
-            <p>Country - {weather.sys.country}</p>
-                <p>max - {weather.main.temp_max}</p>
-                <p>min - {weather.main.temp_min}</p>
-                <p>{weather.main.temp} C</p>
-            </div>
-        </div>
-    )
+      <div className={classes.infos}>
+        <p>Country - {weather.sys.country} °C</p>
+        <p>max - {weather.main.temp_max} °C</p>
+        <p>min - {weather.main.temp_min} °C</p>
+        <p>{weather.main.temp} °C</p>
+      </div>
+    </div>
+  );
 }
 
-export default Weather
+export default Weather;

@@ -10,7 +10,6 @@ function App() {
   const [search, setSearch] = useState("belo horizonte");
   const weather = useWeather(search);
   
-  console.log(weather)
   if (weather === undefined) {
     return (
       <div className="content">
